@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: lightgray;
+}
+
+.head {
+
+    margin: 0;
+    padding: 0;
+    height: 7vh;
+    color: white;
+    background-color: 	#0000FF;
+
+}
+
+.aboutus {
+    border: 5px solid white;
+    height: 10vh;
+    width: 150px;
+    margin: 75px;
+    margin-top: 20vh;
+}
+
+.loginout {
+    border: 5px solid white;
+    height: 5vh;
+    width: 80px;
+    bottom: 350px;
+    margin: 75px;
+    position: absolute;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #dddddd;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #0000ff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+input[type=text] {
+    width: 70px;
+    height: 20px;
+    margin-left: -10px;
+    padding-top: 5px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width */
+input[type=text]:focus {
+    width: 85px;
+    height: 30px;
+}

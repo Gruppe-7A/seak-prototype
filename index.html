@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- https://www.w3schools.com/howto/howto_js_sidenav.asp -->
+    <link rel="stylesheet" href="index.css">
+    <style type="text/css">
+
+    </style>
+    <title>drawer</title>
+</head>
+<body>
+
+
+<div class="head">
+    <span style="font-size:35px;margin: 15px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span style="font-size: 30px;margin: 40px">Seaklogo</span>
+
+
+    <div id="mySidenav" class="sidenav">
+        <h1 style="text-align: center;color:blue">Home</h1>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Event</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="#" style="bottom:10px">Contact us</a>
+    </div>
+    <input style="font-size: 19px" type="text" name="search" placeholder="Search..">
+</div>
+
+<div class="aboutus"></div>
+<div class="loginout"></div>
+
+
+
+
+
+
+
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+
+    }
+</script>
+</body>
+</html>
