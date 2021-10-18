@@ -1,0 +1,15 @@
+:root {
+    --seak-main-color: #347CFF
+}
+
+
+.section-divider {
+    min-width: max-content;
+    max-height: 40px;
+    display: flex;
+    justify-content: center;
+    padding: 3px
+}
+.section-divider h4 {
+    color: var(--seak-main-color);
+}
