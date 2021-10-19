@@ -1,18 +1,25 @@
 
 .aboutus {
-    border: 5px solid white;
-    height: 10vh;
-    width: 150px;
-    margin: 75px;
-    margin-top: 20vh;
+
 }
 
 .loginout {
-    border: 5px solid white;
+    border: 1px solid white;
     height: 5vh;
-    width: 80px;
-    bottom: 350px;
-    margin: 75px;
-    position: absolute;
+    margin-top: 55px;
+    position: relative;
 }
 
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: relative;
+    margin-left: 125px;
+}
