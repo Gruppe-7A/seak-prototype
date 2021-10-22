@@ -7,6 +7,7 @@
     <!-- https://www.w3schools.com/howto/howto_js_sidenav.asp -->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="myevents.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <style type="text/css">
 
@@ -16,7 +17,7 @@
 <body>
 
 
-<div class="head">
+<div class="head" id="head">
     <span style="font-size:35px;margin: 15px;cursor:pointer" onclick="openNav()">&#9776;</span>
     <span style="font-size: 30px;margin: 40px">SEAK   </span>
 
@@ -35,20 +36,114 @@
     </div>
     <input style="font-size: 19px" type="text" name="search" placeholder="Search..">
 </div>
-
-
-<div class="section-divider">
-    <h4>Events today</h4>
+<div class="content">
+    <div class="section-divider">
+        <h4>Events today</h4>
+    </div>
+    <div class="event-section">
+        <div class="event-card">
+            <img src="assets/event1.png" alt="Event picture">
+            <div class="event-text">
+                <h4>Event Title</h4>
+                <p>Event description</p>
+            </div>
+            <div class="icons">
+                <span class="material-icons" style="color: #347CFF;">favorite</span>
+                <span class="material-icons">info </span>
+                
+            </div>
+        </div>
+        <div class="section-divider">
+            <h4>Upcoming events</h4>
+        </div>
+        <div class="event-section">
+            <div class="event-card">
+                <img src="assets/event3.jpg" alt="Event picture">
+                <div class="event-text">
+                    <h4>Event Title</h4>
+                    <p>Event description</p>
+                </div>
+                <div class="icons">
+                    <span class="material-icons" style="color: #347CFF;">favorite</span>
+                    <span class="material-icons">info </span>
+                    
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="assets/event2.jpg" alt="Event picture">
+                <div class="event-text">
+                    <h4>Event Title</h4>
+                    <p>Event description</p>
+                </div>
+                <div class="icons">
+                    <span class="material-icons" style="color: #347CFF;">favorite</span>
+                    <span class="material-icons">info </span>
+                    
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="assets/event4.jpg" alt="Event picture">
+                <div class="event-text">
+                    <h4>Event Title</h4>
+                    <p>Event description</p>
+                </div>
+                <div class="icons">
+                    <span class="material-icons" style="color: #347CFF;">favorite</span>
+                    <span class="material-icons">info </span>
+                    
+                </div>
+            </div>
+            <div class="section-divider">
+                <h4>Past events</h4>
+            </div>
+            <div class="event-section">
+                <div class="event-card">
+                    <img src="assets/event3.jpg" alt="Event picture">
+                    <div class="event-text">
+                        <h4>Event Title</h4>
+                        <p>Event description</p>
+                    </div>
+                    <div class="icons">
+                        <span class="material-icons" style="color: #347CFF;">favorite</span>
+                        <span class="material-icons">info </span>
+                        
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="assets/event4.jpg" alt="Event picture">
+                    <div class="event-text">
+                        <h4>Event Title</h4>
+                        <p>Event description</p>
+                    </div>
+                    <div class="icons">
+                        <span class="material-icons" style="color: #347CFF;">favorite</span>
+                        <span class="material-icons">info </span>
+                        
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="assets/event3.jpg" alt="Event picture">
+                    <div class="event-text">
+                        <h4>Event Title</h4>
+                        <p>Event description</p>
+                    </div>
+                    <div class="icons">
+                        <span class="material-icons" style="color: #347CFF;">favorite</span>
+                        <span class="material-icons">info </span>
+                        
+                    </div>
+                </div>
 </div>
 
+
+
 <script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+    const navbar = document.getElementById("mySidenav")
+        function openNav() {
+        navbar.style.width = "250px";
     }
-
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-
+        navbar.style.width = "0";
     }
 </script>
 </body>

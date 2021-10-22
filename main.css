@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 :root {
     --seak-main-color: #347CFF
 }
@@ -7,8 +9,9 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: lightgray;
+    height: 100%;
 }
 
 .head {
@@ -38,7 +41,7 @@ body {
 }
 .sidenav h1 {
     text-align: center;
-    color:white
+    color:white;
 }
 
 
