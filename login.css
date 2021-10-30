@@ -1,0 +1,58 @@
+.login-body {
+    background-color: white;
+}
+.login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 40px;
+}
+.login-section h4 {
+    color: #347CFF;
+    padding-top: 30px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-input {
+    width: 150px;
+    height: 25px;
+}
+
+.submit-buttons button {
+    height: 30px;
+    width: 90px;
+    letter-spacing: 2.5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: all .5s ease;
+}
+.submit-buttons #login {
+    color: white;
+    background-color: #347CFF;
+    border: none;
+}
+.submit-buttons #login a {
+    color: white;
+    text-decoration: none;
+}
+.submit-buttons #sign-up {
+    background-color: white;
+    color: #347CFF;
+    border: #347CFF solid 0.5px;
+}
+
+.submit-buttons #login:hover {
+
+    background-color: slateblue;
+}
+
