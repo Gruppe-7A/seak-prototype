@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/event.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script type="module" src="database.js"></script>
     <script type="module" src="event.js"></script>
@@ -16,13 +16,14 @@
 
 <body>
     <div class="head">
-        <span style="font-size:35px;margin-left: 20px;cursor:pointer" onclick="openNav()">&#9776;</span>
-        <span style="font-size: 30px;margin-left: 90px">SEAK</span>
-        <div id="mySidenav" class="sidenav">
+        <span id= "open-nav-btn" onclick="openNav()">&#9776;</span>
+        <span id="title">SEAK</span>
+        <div id="sidenav" class="sidenav">
             <h1 style="text-align: center;color:white">Home</h1>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="home.html">Home</a>
-            <a href="myevents.html">My events</a>
+            <a href="myvents.html">My events</a>
+            <a href="hostevents.html">Host events</a>
             <a href="login.html" style="margin-top:400px">Log out</a>
 
         </div>
@@ -104,11 +105,11 @@
 </script>
     <script >
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("sidenav").style.width = "250px";
         }
     
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("sidenav").style.width = "0";
         }
 
         function onFavoriteClick(node) {
