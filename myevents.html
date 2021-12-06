@@ -8,33 +8,31 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/event.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <style type="text/css">
-
-    </style>
     <title>My Events</title>
 </head>
 <body>
 
 
-<div class="head">
-    <span style="font-size:35px;margin-left: 20px;cursor:pointer" onclick="openNav()">&#9776;</span>
-    <span style="font-size: 30px;margin-left: 90px">SEAK</span>
-
-
-    <div id="mySidenav" class="sidenav">
-        <h1 style="text-align: center;color:white">My events</h1>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="home.html">Home</a>
-        <a href="myevents.html">My events</a>
-        <br>
-        <br>
-        <br>
-        <br>
-        <a href="login.html" style="margin-top: 300px;">Log out</a>
-    </div>
-    <input style="font-size: 19px" type="text" name="search" placeholder="Search.." id="header-search">
-</div>
+    <body>
+        <div class="head">
+            <span id="open-nav-btn" onclick="openNav()">&#9776;</span>
+            <div class="home"></div>
+            <div class="title-wrapper">
+                <span id="app-title">SEAK</span>
+                <span id="page-title">My Events</span>
+            </div>
+            <span ></span>
+            <div id="sidenav" class="sidenav">
+                <h1 style="text-align: center;color:white">Home</h1>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="home.html">Home</a>
+                <a href="myevents.html">My events</a>
+                <a href="hostevents.html">Host events</a>
+                <a href="login.html" style="margin-top:400px">Log out</a>
+    
+            </div>
+            <input style="font-size: 19px" type="text" name="search" placeholder="Search.." id="header-search">
+        </div>
 <div class="content">
     <div class="section-divider">
         <h4>Events today</h4>
@@ -126,13 +124,13 @@
 
 
 <script>
-    const navbar = document.getElementById("mySidenav")
         function openNav() {
-        navbar.style.width = "250px";
-    }
-    function closeNav() {
-        navbar.style.width = "0";
-    }
+            document.getElementById("sidenav").style.width = "250px";
+        }
+    
+        function closeNav() {
+            document.getElementById("sidenav").style.width = "0";
+        }
 </script>
 </body>
 </html>
