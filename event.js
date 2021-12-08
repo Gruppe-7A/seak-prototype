@@ -8,8 +8,6 @@ class SeakEvent {
     this.imageUrl = details.imageUrl;
     this.startDate = details.startDate 
     this.startTime = details.startTime
-    this.endDate = details.endDate
-    this.endTime = details.endTime 
     this.favorited = false
     }
 }

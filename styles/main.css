@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
+/** Variabel for samlet farge for appen**/
 :root {
     --seak-main-color: #347CFF
 }
 
+/** Common stylings**/
+
 * {
     margin: 0;
 }
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -16,10 +20,76 @@ body {
 
 .content {
     display: flex;
-    margin-top: 50px;
+    margin-top: 5px;
     flex-direction: column;
 }
 
+/** 
+    Wrapper klasse som blir brukt for alle elementer som trenger flex og column
+    directions. Dette bidrar til langt mindre mindre duplikate linjer siden mange elementer
+    trenger denne stylingen
+**/
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+/** 
+    Wrapper klasse som blir brukt for alle elementer som trenger flex og row
+    directions. 
+    flex-direction: row er default når du spesifiserer display:flex (https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)
+    men vi spesifiserer her så det er lettere å forstå.
+**/
+.row-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-input {
+    width: 150px;
+    height: 20px;
+}
+.large-input {
+    width: 200px !important;
+}
+
+
+/**  END OF Common stylings**/
+
+/** Button stylings **/
+
+.seak-button  {
+    color: white;
+    background-color: var(--seak-main-color);
+    border: none;
+    height: 30px;
+    width: 70px;
+    box-shadow: 0 8px 8px -4px gray;
+    font-variant-caps: all-petite-caps;
+    font-size: 16px;
+}
+
+.seak-button-large {
+    height: 40px !important;
+    width: 90px !important;
+    font-size: 18px !important;
+}
+.seak-button a {
+    color: white;
+    text-decoration: none;
+}
+.seak-button-secondary {
+    background-color: white !important; 
+    color: var(--seak-main-color) !important; 
+    border: var(--seak-main-color) solid 0.5px !important;
+
+}
+.seak-button:hover {
+    background-color: slateblue;
+}
+
+
+
+/** Navbar og  styling **/
 .head {
     margin: 0;
     padding: 0;
@@ -39,20 +109,18 @@ body {
     left: 30px
 }
 
-.head .title-wrapper {
+.title-wrapper {
     position: absolute;
     left: 35%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-items: center;
     font-size: 25px;
 }
 
+/** fix dette**/
 .head .title-wrapper #page-title {
     font-size: 20px;
 }
-
 
 .sidenav {
     height: 100%;
@@ -116,3 +184,54 @@ body {
     width: 85px;
     height: 30px;
 }
+
+
+.submit-buttons button {
+    height: 30px;
+    width: 90px;
+    letter-spacing: 2.5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: all .5s ease;
+}
+
+
+/** Create event styling**/
+.event-form {
+    gap: 10px;
+    margin-top: 10px;
+}
+.event-input-wrapper {
+    box-shadow: 0 8px 8px -4px gray;
+    height: 70px;
+    background-color: rgb(245, 245, 245);
+    padding-left: 10px;
+}
+
+.event-create-row-wrapper {
+    gap: 50px;
+}
+.event-create-wrapper {
+    margin-left: 10px;
+}
+.event-radio-group {
+    position: relative;
+    display: flex;
+    top: 10%;
+    gap: 20px;
+    left: 20%;
+}
+
+.event-input-wrapper-large {
+    height: 120px !important
+}
+.event-description-large {
+    height: 80px !important;
+}
+.create-event-submit-wrapper {
+    position: relative;
+    top: 20px;
+    left: 37%;
+}
+
+

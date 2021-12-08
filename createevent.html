@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/host-event.css">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <title>Create New Event</title>
 </head>
 
@@ -16,7 +13,7 @@
     <div class="head">
         <span id="open-nav-btn" onclick="openNav()">&#9776;</span>
         <div class="home"></div>
-        <div class="title-wrapper">
+        <div class="wrapper title-wrapper">
             <span id="app-title">SEAK</span>
             <span id="page-title">Create New Event</span>
         </div>
@@ -32,10 +29,96 @@
         <input style="font-size: 19px" type="text" name="search" placeholder="Search.." id="header-search">
     </div>
 
-    <div class="content">
-        <form class=>
-            
+    <div class="wrapper">
+        <form class="wrapper event-form" id="create-event-form" action="">
+             <div class="wrapper event-input-wrapper">
+                 <label for="name" >Name of your event</label>
+                 <input type="text" id="name" class="form-input large-input" name="name" required></input>
+             </div>           
+             <div class="wrapper event-input-wrapper">
+                 <div class="row-wrapper event-create-row-wrapper">
+                 <div class="wrapper">
+                    <label for="startDate" >Start date</label>
+                    <input type="date" id="startDate" class="form-input small-input" required name="startDate" ></input>
+                 </div>
+                 <div class="wrapper">
+                     <label for="startTime">Start time</label>
+                     <input type="time" id="startTime" class="form-input small-input" required name="startTime" >
+                 </div>
+                 
+                </div>
+            </div>           
+            <div class="wrapper event-input-wrapper">
+                <p>Event access</p>
+                <div class="wrapper-row event-radio-group">
+                    <input type="radio" id="public" name="accessType" value="public" checked/>
+                    <label for="public">Public</label>
+                    <input type="radio" id="public" name="accessType" value="private"/>
+                    <label for="private">Private</label>
+                    </div>
+                </div>
+                <div class="wrapper event-input-wrapper">
+                    <label for="location">Event location</label> 
+                    <input type="text" id="location" name="location" class="form-input large-input" >
+                </div>
+                <div class="wrapper event-input-wrapper">
+                    <label for="shortDescription">Event short description</label>
+                    <input class="form-input large-input" placeholder="Short description"  required name="shortDescription" id="shortDescription" />
+                </div>
+                <div class="wrapper event-input-wrapper event-input-wrapper-large">
+                    <label for="event-description">Event description</label>
+                    <textarea class="event-description-large" form="create-event-form"  required id="event-description" name="description" placeholder="Describe your event" ></textarea>
+                </div>
+                <div class="wrapper event-input-wrapper">
+                    <p>Image for event will be randomly selected! </p>
+                </div>
+
+                <div class="wrapper create-event-submit-wrapper">
+                <button class="seak-button seak-button-large" >SUBMIT</button>
+                </div>
+            </div>
+
         </form>
     </div>
+
+    <script type="module">
+        // Script type må være module slik at vi kan importerte funksjoner
+        // Alt som blir skrevet innenfor her er i et eget scope, så vi kan ikke bruke funksjoner 
+        // direkte i HTML koden. Vi bruker dermed addEventListener
+        import {insert} from './database.js'
+        import SeakEvent from './event.js'
+
+        const form = document.getElementById('create-event-form')
+           function onSubmit(event) {
+               event.preventDefault()
+               const formData = new FormData(event.target)
+               // Opprette SEAK event ut av form data
+               const seakEvent = new SeakEvent({
+                   name: formData.get('name'),
+                   description: formData.get('description'),
+                   shortDescription: formData.get('shortDescription'),
+                   accessType: formData.get('accessType'),
+                   startDate: formData.get('startDate'),
+                   startTime: formData.get('startTime')
+               })
+               // Legg til seakEventet inn i seak databasen. 
+               // Se database.js for implementasjon
+               insert(seakEvent)
+               form.reset()
+        }
+        
+        
+        form.addEventListener('submit', onSubmit)
+    </script>
+    <script >
+        function openNav() {
+            document.getElementById("sidenav").style.width = "250px";
+        }
+    
+        function closeNav() {
+            document.getElementById("sidenav").style.width = "0";
+        }
+    </script>
+
 
 </body>
