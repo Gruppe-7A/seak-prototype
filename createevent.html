@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="head">
+    <div class="row-wrapper head">
         <span id="open-nav-btn" onclick="openNav()">&#9776;</span>
         <div class="home"></div>
         <div class="wrapper title-wrapper">
@@ -86,45 +86,29 @@
         // Alt som blir skrevet innenfor her er i et eget scope, så vi kan ikke bruke funksjoner 
         // direkte i HTML koden. Vi bruker dermed addEventListener
         import {insert} from './database.js'
-        import SeakEvent from './event.js'
+        import { getRandomImage, generateId } from "./utils.js";
 
         const form = document.getElementById('create-event-form')
            function onSubmit(event) {
                event.preventDefault()
                const formData = new FormData(event.target)
                // Opprette SEAK event ut av form data
-               const seakEvent = new SeakEvent({
+               const seakEvent = {
                    name: formData.get('name'),
                    description: formData.get('description'),
                    shortDescription: formData.get('shortDescription'),
                    accessType: formData.get('accessType'),
                    startDate: formData.get('startDate'),
                    startTime: formData.get('startTime'),
-                   imageUrl: getRandomImage()
-               })
+                   location: formData.get('location'),
+                   favorited: false,
+                   imageUrl: getRandomImage(),
+                   id: generateId()
+               }
                // Legg til seakEventet inn i seak databasen. 
                // Se database.js for implementasjon
                insert(seakEvent)
                form.reset()
-        }
-
-        function getRandomImage() {
-            // En dårlig løsning for å hente ut bilder. Dette er bare for demoprosjekt.
-            // I virkeligheten ville vi hatt bildeopplastning. <input type="file"> ville nok vært det vi hadde brukt
-            const images = [
-                'styles/bbq.jpg',
-                'styles/bowling.jpg',
-                'styles/coding.png',
-                'styles/debate.jpg',
-                'styles/event1.png',
-                'styles/event2.jpg',
-                'styles/event3.jpg',
-                'styles/event4.jpg',
-                'styles/picnic.jpg',
-                'styles/quiz.jpg',
-                'styles/volley.jpg'
-            ]
-            return images[Math.random(images.length - 1)]
         }
         form.addEventListener('submit', onSubmit)
     </script>
