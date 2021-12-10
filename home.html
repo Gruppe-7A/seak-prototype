@@ -1,133 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/event.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <script type="module" src="database.js"></script>
-    <script type="module" src="event.js"></script>
-
 
     <title>Home</title>
-</head>
+  </head>
 
-<body>
-    <div class="head">
-        <span id= "open-nav-btn" onclick="openNav()">&#9776;</span>
-        <div class="title-wrapper">
-            <span id="app-title">SEAK</span>
-            <span id="page-title">Home</span>
-        </div>
-        <div id="sidenav" class="sidenav">
-            <h1 style="text-align: center;color:white">Home</h1>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="home.html">Home</a>
-            <a href="myvents.html">My events</a>
-            <a href="hostevents.html">Host events</a>
-            <a href="login.html" style="margin-top:400px">Log out</a>
-
-        </div>
-        <input style="font-size: 19px" type="text" name="search" placeholder="Search.." id="header-search">
+  <body>
+    <div class="row-wrapper head">
+      <span id="open-nav-btn" onclick="openNav()">&#9776;</span>
+      <div class="wrapper title-wrapper">
+        <span id="app-title">SEAK</span>
+        <span id="page-title">Host Events</span>
+      </div>
+      <div id="sidenav" class="sidenav">
+        <h1 style="text-align: center; color: white">Home</h1>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="home.html">Home</a>
+        <a href="myevents.html">My events</a>
+        <a href="hostevents.html">Host events</a>
+        <a href="login.html" style="margin-top: 400px">Log out</a>
+      </div>
+      <input
+        style="font-size: 19px"
+        type="text"
+        name="search"
+        placeholder="Search.."
+        id="header-search"
+      />
     </div>
-<div class="content">
-    <div class="section-divider">
+
+    <script type="module">
+      import { select } from "./database.js";
+      // Hente ut alle events som ikke er favorisert fra seak-db.
+      // Se database.js for implementasjon
+      const events = select({ favorited: false });
+      let html = `<div class="wrapper">
+      <div class="row-wrapper section-divider">
         <h4>Suggested for you</h4>
-    </div>
-    <div class="event-section">
-        <div class="event-card">
-            <img src="assets/event1.png" alt="Event picture">
-            <div class="event-text">
-                <h4>SEAK Release Party</h4>
-                <p>Join our release party!</p>
-            </div>
-            <div class="icons">
-                <span class="material-icons" onclick="onFavoriteClick(this)">favorite</span>
-                <span class="material-icons">info </span>
-                
-            </div>
+      </div>
+      <div class="wrapper event-section">
+                 ${events.map((event) => `<div class="row-wrapper event-card">
+                        <img src=${event.imageUrl} alt="Event picture">
+                    <div class="wrapper event-text">
+                        <h4>${event.name}</h4>
+                        <p>${event.shortDescription}</p>
+                </div>
+                <div class="row-wrapper event-icons">
+                    <span class="material-icons" onclick="onFavoriteClick(this)">favorite</span>
+                    <span class="material-icons">info </span>
+                </div>
+            </div>`).join('')}
         </div>
-            <div class="event-card">
-                <img src="assets/event3.jpg" alt="Event picture">
-                <div class="event-text">
-                    <h4>Music Festival</h4>
-                    <p>Kristiansands coolest music festival!</p>
-                </div>
-                <div class="icons">
-                    <span class="material-icons" onclick="onFavoriteClick(this)">favorite</span>
-                    <span class="material-icons">info </span>
-                    
-                </div>
-            </div>
-            <div class="event-card">
-                <img src="assets/event4.jpg" alt="Event picture">
-                <div class="event-text">
-                    <h4>Disco Bowling</h4>
-                    <p>Show off your dance and bowling skills!</p>
-                </div>
-                <div class="icons">
-                    <span class="material-icons" onclick="onFavoriteClick(this)">favorite</span>
-                    <span class="material-icons">info </span>
-                    
-                </div>
-            </div>
-            <div class="event-card">
-                <img src="assets/event2.jpg" alt="Event picture">
-                <div class="event-text">
-                    <h4>Quiz Night</h4>
-                    <p>Flex your knowlegde and win cool prizes!</p>
-                </div>
-                <div class="icons">
-                    <span class="material-icons" onclick="onFavoriteClick(this)">favorite</span>
-                    <span class="material-icons">info </span>
-                    
-                </div>
-            </div>
-            <div class="event-section">
-                <div class="event-card">
-                    <img src="assets/bbq.jpg" alt="Event picture">
-                    <div class="event-text">
-                        <h4>Barbeque</h4>
-                        <p>Enjoy delicious food and good company!</p>
-                    </div>
-                    <div class="icons">
-                        <span class="material-icons" onclick="onFavoriteClick(this)">favorite</span>
-                        <span class="material-icons">info </span>
-                        
-                    </div>
-                </div>
-        </div>
-        
-        
-</div>
-
-<script>
-    
-</script>
-    <script >
-        function openNav() {
-            document.getElementById("sidenav").style.width = "250px";
-        }
-    
-        function closeNav() {
-            document.getElementById("sidenav").style.width = "0";
-        }
-
-        function onFavoriteClick(node) {
-            if(node.favorited === undefined || node.favorited === false) {
-                node.favorited = true
-                node.style.color = "#347CFF"
-            } else {
-                node.style.color = '#000000'
-                node.favorited = false
-            }
-            
-        }
-   
+    </div>`;
+    //.join fjerner kommaer siden Arrays.map() returnerer en array. Alle elementer i en array er separert med komma
+      const template = document.createElement("template");
+      template.innerHTML = html;
+      document.body.appendChild(template.content.firstChild);
     </script>
-</body>
 
+    <script>
+      function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
+      }
 
+      function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+      }
+
+      function onFavoriteClick(node) {
+        if (node.favorited === undefined || node.favorited === false) {
+          node.favorited = true;
+          node.style.color = "#347CFF";
+        } else {
+          node.style.color = "#000000";
+          node.favorited = false;
+        }
+      }
+    </script>
+  </body>
 </html>

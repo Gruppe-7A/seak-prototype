@@ -17,13 +17,6 @@ body {
     background-color: lightgray;
     height: 100%;
 }
-
-.content {
-    display: flex;
-    margin-top: 5px;
-    flex-direction: column;
-}
-
 /** 
     Wrapper klasse som blir brukt for alle elementer som trenger flex og column
     directions. Dette bidrar til langt mindre mindre duplikate linjer siden mange elementer
@@ -89,16 +82,20 @@ body {
 
 
 
-/** Navbar og  styling **/
+/** Navbar og header styling **/
+
+/** Head har position: sticky så den alltid er op toppen når man scroller**/
 .head {
     margin: 0;
     padding: 0;
     height: 7vh;
     color: white;
     background-color: var(--seak-main-color);
-    display: flex;
     align-items: center;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1; /** GJør slik at header alltid overlayer alle elementer**/
 }
 
 
@@ -234,4 +231,48 @@ body {
     left: 37%;
 }
 
+/** END OF Create event styling**/
 
+/** Common event cards styling **/
+.section-divider {
+    min-width: max-content;
+    max-height: 40px;
+    justify-content: center;
+    padding: 10px;
+}
+.section-divider h4 {
+    color: var(--seak-main-color);
+}
+
+.event-section {
+    min-height:87vh;
+}
+.event-card {
+    gap: 20px;
+    height: 100px;
+    width: 99%;
+    background-color: white;
+    border: 1px solid grey;
+}
+.event-card img {
+    position: relative;
+    width: 90px;
+    height: 70px;
+    top: 10px;
+    left: 10px;
+}
+.event-text {
+    gap: 40px;
+    width: 200px;
+    overflow-wrap: break-word;
+}
+
+.event-text h4 {
+    position: relative;
+    top: 10px;
+}
+.event-icons {
+    position: relative;
+    top: 10%;
+    left: 0%;
+}
