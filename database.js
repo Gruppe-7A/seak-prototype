@@ -173,7 +173,36 @@ insert(
     },
     true
 );
-
+insert(
+    {
+      name: "Bowling",
+      description: "Long description about bowling",
+      shortDescription: "Bowling evening!",
+      accessType: "public",
+      startDate: getDateFromToday(2),
+      startTime: "18:30 AM",
+      location: "Kristiansand",
+      imageUrl: "assets/bowling.jpg",
+      favorited: true,
+      id: 5,
+    },
+    true
+);
+insert(
+    {
+      name: "Hiking",
+      description: "Long description about hiking",
+      shortDescription: "Join hiking in Kristiansand!",
+      accessType: "public",
+      startDate: getDateFromToday(11),
+      startTime: "11:30 AM",
+      location: "Kristiansand",
+      imageUrl: "assets/hiking.jpg",
+      favorited: true,
+      id: 6,
+    },
+    true
+ );
 insert(
     {
       name: "Volley",
@@ -189,7 +218,21 @@ insert(
     },
     true
 );
-
+insert(
+    {
+      name: "Game night",
+      description: "Long description about game night",
+      shortDescription: "Enjoy a fun game night!",
+      accessType: "public",
+      startDate: getDateFromToday(7),
+      startTime: "19:00 AM",
+      location: "Kristiansand",
+      imageUrl: "assets/game night.jpg",
+      favorited: false,
+      id: 8,
+    },
+    true
+);
 insert(
     {
       name: "Volley test 2",
@@ -217,6 +260,21 @@ insert(
       imageUrl: "assets/volley.jpg",
       favorited: true,
       id: 10,
+    },
+    true
+);
+insert(
+    {
+      name: "Music bingo",
+      description: "Long description about music bingo",
+      shortDescription: "Music bingo at the bar!",
+      accessType: "public",
+      startDate: getDateFromToday(-7),
+      startTime: "21:00 AM",
+      location: "Kristiansand",
+      imageUrl: "assets/music bingo.jpg",
+      favorited: false,
+      id: 11,
     },
     true
 );
