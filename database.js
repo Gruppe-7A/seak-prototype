@@ -167,7 +167,7 @@ insert(
       startDate: getDateFromToday(-3),
       startTime: "10:30 AM",
       location: "Kristiansand",
-      imageUrl: "assets/volley.jpg",
+      imageUrl: "assets/Quiz.jpg",
       favorited: false,
       id: 4,
     },
@@ -219,6 +219,7 @@ insert(
     true
 );
 insert(
+
     {
       name: "Game night",
       description: "Long description about game night",
@@ -235,36 +236,6 @@ insert(
 );
 insert(
     {
-      name: "Volley test 2",
-      description: "Long description about volley",
-      shortDescription: "Join on on a entry level volley match!",
-      accessType: "public",
-      startDate: getDateFromToday(0),
-      startTime: "10:30 AM",
-      location: "Kristiansand",
-      imageUrl: "assets/volley.jpg",
-      favorited: true,
-      id: 9,
-    },
-    true
-);
-insert(
-    {
-      name: "Volley test 3",
-      description: "Long description about volley",
-      shortDescription: "Join on on a entry level volley match!",
-      accessType: "public",
-      startDate: getDateFromToday(1),
-      startTime: "10:30 AM",
-      location: "Kristiansand",
-      imageUrl: "assets/volley.jpg",
-      favorited: true,
-      id: 10,
-    },
-    true
-);
-insert(
-    {
       name: "Music bingo",
       description: "Long description about music bingo",
       shortDescription: "Music bingo at the bar!",
@@ -276,5 +247,37 @@ insert(
       favorited: false,
       id: 11,
     },
-    true
-);
+    true,
+     );
+
+insert(
+      {
+        name: "Håndball",
+        description: "Tryout for the KSU håndball team",
+        shortDescription: "Tryout for the KSU håndball team",
+        accessType: "public",
+        startDate: getDateFromToday(7),
+        startTime: "08:00 AM",
+        location: "Aquarama",
+        imageUrl: "assets/handfotball.jpg",
+        favorited: false,
+        id: 12,
+      },
+      true,
+       );
+insert(
+      {
+          name: "Squid game",
+          description: "Mr.beasts Squidgame",
+          shortDescription: "Mr.beasts Squidgame",
+          accessType: "public",
+          startDate: getDateFromToday(14),
+          startTime: "12:00 AM",
+          location: "UIA",
+          imageUrl: "assets/squid.png",
+          favorited: true,
+          id: 13,
+        },
+        true,
+         );
+  
