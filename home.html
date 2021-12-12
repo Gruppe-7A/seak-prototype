@@ -40,32 +40,30 @@
     </div>
 
     <script type="module">
-      import { select } from "./database.js";
+      import { select, update } from "./database.js";
+      import { generateEventHtml, setEventOnClick } from "./utils.js";
+      
       // Hente ut alle events som ikke er favorisert fra seak-db.
       // Se database.js for implementasjon
       const events = select({ favorited: false });
-      let html = `<div class="wrapper">
-      <div class="row-wrapper section-divider">
-        <h4>Suggested for you</h4>
-      </div>
-      <div class="wrapper event-section">
-                 ${events.map((event) => `<div class="row-wrapper event-card">
-                        <img src=${event.imageUrl} alt="Event picture">
-                    <div class="wrapper event-text">
-                        <h4>${event.name}</h4>
-                        <p>${event.shortDescription}</p>
-                </div>
-                <div class="row-wrapper event-icons">
-                    <span class="material-icons" onclick="onFavoriteClick(this)">favorite</span>
-                    <span class="material-icons">info </span>
-                </div>
-            </div>`).join('')}
-        </div>
-    </div>`;
-    //.join fjerner kommaer siden Arrays.map() returnerer en array. Alle elementer i en array er separert med komma
+      const eventsHtml = generateEventHtml(events)
+      // Generer HTML kort ut av events vi får gjennom select().
+      // Se utils.js for implementasjon
+      // Hente ut alle events som ikke er favorisert fra seak-db.
+      // Se database.js for implementasjon
+      const html = `<div class="wrapper">
+<div class="row-wrapper section-divider">
+  <h4>Suggested for you</h4>
+</div>
+<div class="wrapper event-section">
+      ${eventsHtml}
+  </div>
+</div>`;
+      //.join fjerner kommaer siden Arrays.map() returnerer en array. Alle elementer i en array er separert med komma
       const template = document.createElement("template");
       template.innerHTML = html;
       document.body.appendChild(template.content.firstChild);
+      setEventOnClick(events)
     </script>
 
     <script>
@@ -75,16 +73,6 @@
 
       function closeNav() {
         document.getElementById("sidenav").style.width = "0";
-      }
-
-      function onFavoriteClick(node) {
-        if (node.favorited === undefined || node.favorited === false) {
-          node.favorited = true;
-          node.style.color = "#347CFF";
-        } else {
-          node.style.color = "#000000";
-          node.favorited = false;
-        }
       }
     </script>
   </body>
