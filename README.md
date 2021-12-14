@@ -350,42 +350,11 @@ Vi har i tillegg strukturert stylings slik at vi har hovedklasser og underklasse
 
 På nettsiden styles knapper slik ved bruk av disse klassene:
 
-<head>
-<style>
-    .seak-button  {
-    color: white;
-    background-color: #347CFF;
-    border: none;
-    height: 30px;
-    width: 100px;
-    box-shadow: 0 8px 8px -4px #7a7a7a;
-    font-variant-caps: all-petite-caps;
-    font-size: 16px;
-}
-.seak-button-secondary {
-    background-color: white !important; 
-    color: #347CFF!important; 
-    border: #347CFF solid 0.5px !important;
-}
-.seak-button:hover {
-background-color: #2b5bb3;
-}
-.seak-button-secondary:hover {
-    color: #2b5bb3 !important;
-    border: #2b5bb3 solid 0.7px !important;
-    background-color: #e8f0ff !important;
-
-}
-</style>
-</head>
-<button class="seak-button" > PRIMARY </button>
-<button class="seak-button seak-button-secondary" > SECONDARY </button>
-
-<br/>
+![buttons](assets/buttons.png)
 
 ```html
-<button class="seak-button"> PRIMARY </button>
-<button class="seak-button seak-button-secondary"> SECONDARY </button>
+<button class="seak-button"> LOG IN </button>
+<button class="seak-button seak-button-secondary"> SIGN UP </button>
 ```
 
 
@@ -436,7 +405,7 @@ Kort summert har vi lagt fokus på dette under utvikling
 Disse regelene har vi forsøkt å fulgt så godt vi kunne gjennom hele prosjektet. Vi ga en person hovedansvar for å passe på at issues var riktig satt opp og at resten av gruppemedlemmene opprettet og brukte riktig branch når de skulle bidra med kode og kommentarer. 
 
 ### 3.2 Oppretting av issues og branches
-![issue flyt](assets/issueflyt.png)
+<img src="assets/issueflyt.png" width="50%" height="20%" />
 
 Når vi hadde en oppgave som måtte gjøres, diskuterte vi hva som skal gjøres og hvem som får ansvar for at dette blir gjort. Når dette var bestemt, opprettet vi en issue i vårt kanban board og tildelte dette til de som hadde ansvar for oppgaven. 
 
@@ -449,7 +418,7 @@ Arbeidet ble da utført i lokale utviklermiljøer ved at vi kjører `git pull` (
 `git push origin b19` - Push endringene opp til branch som ligger i GitHub rebo (kan i de fleste tilfeller forkortes til `git push`)
 
 ### 3.3 Pull Requests og godkjennelse
-![pull request](assets/pr.png)
+<img src="assets/pr.png" width="50%" height="20%" />
 
 PR flyten fungerer slik at når nye endringer skulle merges til `main` branch, ble det opprettet en PR. Gruppemedlemmene som hadde blitt satt som inspektører ser på koden og godkjenner om den er OK. Da merges branchen inn til main. Hvis den blir avvist, må endringer i koden bli gjort i henhold til krav fra inspektør, og etter så gjentar prosessen seg med ny PR.
 
