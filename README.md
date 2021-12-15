@@ -30,7 +30,7 @@ IS-114/104 Fellesprosjekt
   
 ## 1. Introduksjon 
 
-Vi i gruppe 7A har utviklet applikasjonen vi har designet i 104. Applikasjonen består av en rekke med sider som er utviklet ved help av teknologier som **Javascript**, **Cascading Style Sheets (CSS)** og **Hyper Text Markup Language (HTML)**. Applikasjonen lar brukere se, bli med på og opprette events gjennom et interaktivt brukergrensesnitt. 
+Vi i gruppe 7A har utviklet applikasjonen vi har designet i 104. Applikasjonen består av en rekke med sider som er utviklet ved help av teknologier som **Javascript**, **Cascading Style Sheets (CSS)** og **Hyper Text Markup Language (HTML)**. Applikasjonen lar brukere se, bli med på og opprette events gjennom et interaktivt brukergrensesnitt. Vi har ikke brukt Canvas elementet i utviklingen grunnet at vi allerede har brukt det i How We Roll. Vi så ingen nytte av å bruke det i dette prosjektet grunnet at vi ikke trenger Javascript for å tegne former, dette blir gjort i CSS. 
 
 ### 1.1  Teknologier utnyttet
 
