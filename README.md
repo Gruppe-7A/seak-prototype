@@ -36,10 +36,13 @@ Vi i gruppe 7A har utviklet applikasjonen vi har designet i 104. Applikasjonen b
 
 - **HTML**
   - HTML blir brukt for å bygge selve strukturen til nettsiden og beskriver hvordan elementer skal plasserers. (MDN, 2021a) 
+  - Spesifikasjon: https://html.spec.whatwg.org/
 - **CSS**
   - CSS er et stylesheet-språk som lar oss selektivt kustomisere utseende til HTML elementer gjennom bruk av klasser og element-id'er. (MDN, 2021b)
+  - Spesifikasjon: https://www.w3.org/Style/CSS/specs.en.html
 - **Javscript**
   - Javascript er et programmeringspråk som skaper interaktivitet på en nettsiden. Gjennom språket kan du definere oppførselen til nettsiden når du f.eks trykker på en knapp (MDN, 2021c)
+  - Spesifikasjon: https://262.ecma-international.org/12.0/
 - **Git**
   - Git er et versjoneringssystem som holder styr på filer til et prosjekt og lar flere utviklere jobbe på samme prosjekt uten kodekonflikter (Sridhar, 2018)
 - **GitHub**
@@ -445,12 +448,24 @@ Her er en liste over hva du kan teste ut i appen:
 ## Referanser
 
 Coyier, C (2021, 9.12) *A complete guide to Flexbox* https://css-tricks.com/snippets/css/a-guide-to-flexbox\
-Digital (2021) *An Introduction to GitHub* https://digital.gov/resources/an-introduction-github/\
+
+
+Digital (2021) *An Introduction to GitHub* https://digital.gov/resources/an-introduction-github/
+
+
 Google (2021, 13.12) *Google HTML/CSS Style Guide*
-https://google.github.io/styleguide/htmlcssguide.html#Optional_Tags\
+https://google.github.io/styleguide/htmlcssguide.html#Optional_Tags
+
+
 MDN (2021a, 13.12) *HTML Basics*
 https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics\
+
+
 MDN (2021b, 13.12) *CSS Basics*
 https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics\
+
+
 MDN (2021c, 13.12) *JavaScript basics* https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics\
+
+
 Sridhar, A (2018) *An introduction to Git: what it is, and how to use it*. https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/\
