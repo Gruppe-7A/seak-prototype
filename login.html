@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- https://www.w3schools.com/howto/howto_js_sidenav.asp -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <style type="text/css">
@@ -14,10 +13,11 @@
     </style>
     <title>Log In</title>
 
-<body class="login-body">
 </head>
+<body class="login-body">
+
 <div class="head">
-<span style="font-size: 30px;margin-left: 120px">SEAK</span>
+<span style="font-size: 30px;margin-left: 150px">SEAK</span>
 </div>
 <div class="wrapper login-header">
     <img src="./assets/login-pic.PNG" alt="Login Profile Picture"/>
@@ -27,11 +27,12 @@
 <div class="wrapper login-section">
     <h4> Feide Login</h4>
     <form class="wrapper login-form">
-
         <input type="text" placeholder="Username" id="username" class="form-input">
-
         <input type="password" placeholder="Password" id="password" class="form-input">
         <div>
+            <!-- Login omdirigerer deg rett tim home.htm
+                 Styling på knappene bruker seak-button
+            -->
             <button class="seak-button"><a href="home.html">LOG IN</a></button>
             <button class="seak-button seak-button-secondary">SIGN UP</button>
         </div>

@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <script type="module" src="database.js"></script>
 
     <title>Home</title>
   </head>
@@ -22,9 +21,7 @@
       </div>
       <div id="sidenav" class="sidenav">
         <h1 style="text-align: center; color: white">Home</h1>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;</a
-        >
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="home.html">Home</a>
         <a href="myevents.html">My events</a>
         <a href="hostevents.html">Host events</a>
@@ -42,28 +39,26 @@
     <script type="module">
       import { select, update } from "./database.js";
       import { generateEventHtml, setEventOnClick } from "./utils.js";
-      
+
       // Hente ut alle events som ikke er favorisert fra seak-db.
       // Se database.js for implementasjon
       const events = select({ favorited: false });
-      const eventsHtml = generateEventHtml(events)
+      const eventsHtml = generateEventHtml(events);
       // Generer HTML kort ut av events vi får gjennom select().
       // Se utils.js for implementasjon
-      // Hente ut alle events som ikke er favorisert fra seak-db.
-      // Se database.js for implementasjon
       const html = `<div class="wrapper">
-<div class="row-wrapper section-divider">
-  <h4>Suggested for you</h4>
-</div>
-<div class="wrapper event-section">
-      ${eventsHtml}
-  </div>
-</div>`;
-      //.join fjerner kommaer siden Arrays.map() returnerer en array. Alle elementer i en array er separert med komma
+                      <div class="row-wrapper section-divider">
+                        <h4>Suggested for you</h4>
+                      </div>
+                      <div class="wrapper event-section">
+                         ${eventsHtml}
+                      </div>
+                    </div>`;
+      
       const template = document.createElement("template");
       template.innerHTML = html;
       document.body.appendChild(template.content.firstChild);
-      setEventOnClick(events)
+      setEventOnClick(events);
     </script>
 
     <script>

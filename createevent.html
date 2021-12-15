@@ -28,7 +28,9 @@
         </div>
         <input style="font-size: 19px" type="text" name="search" placeholder="Search.." id="header-search">
     </div>
-
+    <!-- HTML form for å opprette nytt event
+        Her bruker vi mye felles CSS styling som "form-input" for å style alle likt.
+    -->
     <div class="wrapper">
         <form class="wrapper event-form" id="create-event-form" action="">
              <div class="wrapper event-input-wrapper">
@@ -73,6 +75,7 @@
                     <p>Image for event will be randomly selected! </p>
                 </div>
 
+                <!-- Submitknapp  -->
                 <div class="wrapper create-event-submit-wrapper">
                 <button class="seak-button seak-button-large" >SUBMIT</button>
                 </div>
@@ -89,10 +92,13 @@
         import { getRandomImage, generateId } from "./utils.js";
 
         const form = document.getElementById('create-event-form')
+
+        //onSubmit event som kalles når bruker sender inn form
            function onSubmit(event) {
                event.preventDefault()
                const formData = new FormData(event.target)
-               // Opprette SEAK event ut av form data
+               // Opprette SEAK event ut av form data 
+               // Objektstruktur er spesifisert i README. Kunne også i utgangspunktet være en Javascriptklasse
                const seakEvent = {
                    name: formData.get('name'),
                    description: formData.get('description'),
@@ -110,6 +116,7 @@
                insert(seakEvent)
                form.reset()
         }
+        // Legg til eventlistener på 'submit' av form event. 
         form.addEventListener('submit', onSubmit)
     </script>
     <script >
