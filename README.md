@@ -252,7 +252,7 @@ export function generateEventHtml(events) {
     .join("")}`;
 }
 ```
-Dette er en funksjon som generer HTML elementer for visning av eventer i applikasjonen. Siden eventer skal vises på forskjellige måter og på forskjellige sider, gir det mening å gjøre dette om til en funksjon
+Dette er en funksjon som generer HTML elementer for visning av eventer i applikasjonen. Siden eventer skal vises på lik måte men på forskjellige sider, gir det mening å gjøre dette om til en funksjon slik at alle sider som trenger events kan bruke de.
 
 Man kan se bruken av denne funksjonen i `home.html` og `myevents.html` (koden til snippets er forklart i selve filene):
 
@@ -310,7 +310,7 @@ row-wrapper {
 
 `wrapper` er den mest brukte og gjør slik at elementer automatisk plasserer seg kolonnevis. `row-wrapper` brukes når elementer skal plasseres ved siden av hverandre
  
- ![flexbox](/assets/flexbox.png)\
+ ![flexbox](assets/flexbox.PNG)\
  (Coyier, 2021, figur 3)
 
 I HTML har disse klassene blitt brukt slik (forkortet utdrag av `createvents.html`):
@@ -350,7 +350,7 @@ Vi har i tillegg strukturert stylings slik at vi har hovedklasser og underklasse
 
 På nettsiden styles knapper slik ved bruk av disse klassene:
 
-![buttons](assets/buttons.png)
+![buttons](assets/buttons.PNG)
 
 ```html
 <button class="seak-button"> LOG IN </button>
@@ -391,7 +391,7 @@ Vi har i stor grad prøvd å ha en strukturert arbeidsmåte når det kommer til 
 - Reviews
 
 Et bilde av vårt Kanban bord under utvikling:
-![seak board](assets/board.png)
+![seak board](assets/board.PNG)
 
 ### 3.1 Hovedfokus og regler
 
@@ -444,10 +444,10 @@ Her er en liste over hva du kan teste ut i appen:
 
 ## Referanser
 
-Coyier, C (2021, 9.12) *A complete guide to Flexbox* https://css-tricks.com/snippets/css/a-guide-to-flexbox
-Digital (2021) *An Introduction to GitHub* https://digital.gov/resources/an-introduction-github/
+Coyier, C (2021, 9.12) *A complete guide to Flexbox* https://css-tricks.com/snippets/css/a-guide-to-flexbox\
+Digital (2021) *An Introduction to GitHub* https://digital.gov/resources/an-introduction-github/\
 Google (2021, 13.12) *Google HTML/CSS Style Guide*
-https://google.github.io/styleguide/htmlcssguide.html#Optional_Tags
+https://google.github.io/styleguide/htmlcssguide.html#Optional_Tags\
 MDN (2021a, 13.12) *HTML Basics*
 https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics\
 MDN (2021b, 13.12) *CSS Basics*
