@@ -4,7 +4,7 @@
 
 IS-114/104 Fellesprosjekt 
 
-**Github Pages link:** https://gruppe-7a.github.io/
+**Github Pages link:** https://gruppe-7a.github.io/seak-prototype
 
 <u>**Vil du teste applikasjonen? Les dette først:**</u> [Hvordan teste applikasjonen](#hvordan-teste-applikasjonen)
 
