@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- https://www.w3schools.com/howto/howto_js_sidenav.asp -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>My Events</title>
@@ -19,6 +18,7 @@
                 <span id="page-title">My Events</span>
             </div>
             <span ></span>
+            <!-- Sidenav styling med linker til sider-->
             <div id="sidenav" class="sidenav">
                 <h1 style="text-align: center;color:white">Home</h1>
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -31,26 +31,27 @@
             <input style="font-size: 19px" type="text" name="search" placeholder="Search.." id="header-search">
         </div>
 
-        <div>
-
-        </div>
-
-
 <script type="module">
     import { select } from "./database.js";
     import {generateEventHtml, toFormattedDate, setEventOnClick} from './utils.js'
 
 
-    // Hente ut alle events som ikke er favorisert fra seak-db.
+    // Hente ut alle events som er favorisert og filtrer basert på dato
     // Se database.js for implementasjon
-    const eventsToday = select({ favorited: true, startDate: toFormattedDate(new Date())});
-    // Filtrer alle events som er etter datoen idag. Markeres med >
+
+    // Henter alle events idag. new Date() returnerer datoen dagen koden blir kjørt
+    const eventsToday = select({ favorited: true, startDate: `${new Date()}`});
+    // Filtrer alle events som er etter datoen idag. Markeres med >. 
     const futureEvents = select({favorited: true, startDate: `> ${toFormattedDate(new Date())}`})
+    // Filtrer alle events har vært før datoen idag. Markeres med <. 
     const pastEvents = select({favorited: true, startDate: `< ${toFormattedDate(new Date())}`})
 
+    // Genererer HTML event strings for alle eventene hentet ut.
+    // Se utils.js for implementasjon
     const eventsTodayHtml = generateEventHtml(eventsToday)
     const futureEventsHtml = generateEventHtml(futureEvents)
     const pastEventsHtml = generateEventHtml(pastEvents)
+    // Lage HTML string ut fra de genererte event html strengene.
     const html = `<div class="wrapper">
         <div class="row-wrapper section-divider">
             <h4> Events today </h4>
@@ -71,12 +72,12 @@
                 ${pastEventsHtml}
             </div>
         </div>`
-    // Generer HTML kort ut av events vi får gjennom select().
-    // Se utils.js for implementasjon
-    //generateEventHtml(events)
-    const template = document.createElement("template");
+        // Oppretter nytt element og legger den til i body på dokumentet slik at den vises
+      const template = document.createElement("template");
       template.innerHTML = html;
       document.body.appendChild(template.content.firstChild);
+
+      // Setter onClick events på eventene slik at de 
       setEventOnClick(eventsToday)
       setEventOnClick(futureEvents)
       setEventOnClick(pastEvents)
@@ -84,10 +85,10 @@
   </script>
 
 <script>
+    // Funksjoner for å åpne/lukke navbar
         function openNav() {
             document.getElementById("sidenav").style.width = "250px";
         }
-    
         function closeNav() {
             document.getElementById("sidenav").style.width = "0";
         }

@@ -2,20 +2,19 @@
 
 /** Variabel for samlet farge for appen**/
 :root {
-    --seak-main-color: #347CFF
+  --seak-main-color: #347cff;
 }
 
 /** Common stylings**/
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
-
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: lightgray;
-    height: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: lightgray;
+  height: 100%;
 }
 /** 
     Wrapper klasse som blir brukt for alle elementer som trenger flex og column
@@ -23,8 +22,8 @@ body {
     trenger denne stylingen
 **/
 .wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 /** 
     Wrapper klasse som blir brukt for alle elementer som trenger flex og row
@@ -33,293 +32,307 @@ body {
     men vi spesifiserer her så det er lettere å forstå.
 **/
 .row-wrapper {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .form-input {
-    width: 150px;
-    height: 20px;
+  width: 150px;
+  height: 20px;
 }
 .large-input {
-    width: 200px !important;
+  width: 200px !important;
 }
-
 
 /**  END OF Common stylings**/
 
 /** Button stylings **/
 
-.seak-button  {
-    color: white;
-    background-color: var(--seak-main-color);
-    border: none;
-    height: 30px;
-    width: 70px;
-    box-shadow: 0 8px 8px -4px gray;
-    font-variant-caps: all-petite-caps;
-    font-size: 16px;
+.seak-button {
+  color: white;
+  background-color: var(--seak-main-color);
+  border: none;
+  height: 30px;
+  width: 70px;
+  box-shadow: 0 8px 8px -4px gray;
+  font-variant-caps: all-petite-caps;
+  font-size: 16px;
 }
 
+/** Overskriver default seak-button stylings med !important **/
 .seak-button-large {
-    height: 40px !important;
-    width: 90px !important;
-    font-size: 18px !important;
+  height: 40px !important;
+  width: 90px !important;
+  font-size: 18px !important;
 }
+/** Farge på tekst på knappen **/
 .seak-button a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
+
+/** Overskriver default seak-button stylings med !important. Dette er sekundærknapp **/
 .seak-button-secondary {
-    background-color: white !important; 
-    color: var(--seak-main-color) !important; 
-    border: var(--seak-main-color) solid 0.5px !important;
-
+  background-color: white !important;
+  color: var(--seak-main-color) !important;
+  border: var(--seak-main-color) solid 0.5px !important;
 }
+
 .seak-button:hover {
-    background-color: slateblue;
+  background-color: slateblue;
 }
 
+/** Stor blokkknapp som du finner i Host Events **/
 .seak-block-button {
-    box-shadow: 0 8px 8px -4px gray;
-    background-color: rgb(245, 245, 245);
-    height: 100px;
-    display: flex;
-    text-decoration: none;
-    color: black;
+  box-shadow: 0 8px 8px -4px gray;
+  background-color: rgb(245, 245, 245);
+  height: 100px;
+  display: flex;
+  text-decoration: none;
+  color: black;
 }
 .seak-block-button:hover {
-    background-color: rgba(233, 233, 233, 0.877);
-}
-.seak-block-button h3 {
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-    top: 35%;
-    left: 20px;
-    font-size: 20px;
-}
-.seak-block-button #arrow {
-    position: relative;
-    top: 30%;
-    left: 30%;
-    font-size: 35px;
+  background-color: rgba(233, 233, 233, 0.877);
 }
 
+.seak-block-button h3 {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  top: 35%;
+  left: 20px;
+  font-size: 20px;
+}
+.seak-block-button #arrow {
+  position: relative;
+  top: 30%;
+  left: 30%;
+  font-size: 35px;
+}
 
 /** Navbar og header styling **/
 
 /** Head har position: sticky så den alltid er op toppen når man scroller**/
 .head {
-    margin: 0;
-    padding: 0;
-    height: 7vh;
-    color: white;
-    background-color: var(--seak-main-color);
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 1; /** GJør slik at header alltid overlayer alle elementer**/
+  margin: 0;
+  padding: 0;
+  height: 7vh;
+  color: white;
+  background-color: var(--seak-main-color);
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1; /** GJør slik at header alltid overlayer alle elementer**/
 }
 
-
+/** Styling for drawer ikon **/
 .head #open-nav-btn {
-    font-size:35px;
-    cursor:pointer;
-    position: absolute;
-    left: 30px
+  font-size: 35px;
+  cursor: pointer;
+  position: absolute;
+  left: 30px;
 }
 
+/** Wrapper for titler på alle sider **/
 .title-wrapper {
-    position: absolute;
-    left: 35%;
-    align-items: center;
-    justify-items: center;
-    font-size: 25px;
+  position: absolute;
+  left: 35%;
+  align-items: center;
+  justify-items: center;
+  font-size: 25px;
 }
-
-/** fix dette**/
 .head .title-wrapper #page-title {
-    font-size: 20px;
+  font-size: 20px;
 }
 
+/** Sidenav styling. Bruker transistion. zindex 1 slik at den skal vises over andre elementer **/
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: var(--seak-main-color);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    box-shadow: 5px 0px 10px #3f3f3f;
-
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--seak-main-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 5px 0px 10px #3f3f3f;
 }
 .sidenav h1 {
-    text-align: center;
-    color:white;
+  text-align: center;
+  color: white;
 }
 
-
 .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #fff;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #0000ff;
+  color: #0000ff;
 }
 
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
-
+/** Gjør slik at drawer tilplasser skjermstørrelser 
+https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+**/
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
-#header-search[type=text] {
-    position: relative;
-    left: 30%;
-    width: 60px;
-    height: 20px;
-    margin-left: 40px;
-    padding-top: 5px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+/** Styling for search bar på alle sider **/
+#header-search[type="text"] {
+  position: relative;
+  left: 30%;
+  width: 60px;
+  height: 20px;
+  margin-left: 40px;
+  padding-top: 5px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
 
-/* When the input field gets focus, change its width */
-#header-search[type=text]:focus {
-    width: 85px;
-    height: 30px;
+/* Når søkefeltet blir fokusert, endrer vi størrelsen*/
+#header-search[type="text"]:focus {
+  width: 85px;
+  height: 30px;
 }
-
-
-.submit-buttons button {
-    height: 30px;
-    width: 90px;
-    letter-spacing: 2.5px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    transition: all .5s ease;
-}
-
 
 /** Login styling **/
 
 .login-body {
-    background-color: white;
+  background-color: white;
 }
 .login-header {
-    align-items: center;
+  align-items: center;
 }
 
 .login-section {
-    align-items: center;
-    gap: 10px;
-    padding-top: 40px;
+  align-items: center;
+  gap: 10px;
+  padding-top: 40px;
 }
 .login-section h4 {
-    color: #347CFF;
-    padding-top: 30px;
+  color: #347cff;
+  padding-top: 30px;
 }
 .login-form {
-    gap: 20px;
+  gap: 20px;
 }
-
 
 /** Create event styling**/
 .event-form {
-    gap: 10px;
-    margin-top: 10px;
+  gap: 10px;
+  margin-top: 10px;
 }
+
+/** Wrapper boks for alle inputs **/
 .event-input-wrapper {
-    box-shadow: 0 8px 8px -4px gray;
-    height: 70px;
-    background-color: rgb(245, 245, 245);
-    padding-left: 10px;
+  box-shadow: 0 8px 8px -4px gray;
+  height: 70px;
+  background-color: rgb(245, 245, 245);
+  padding-left: 10px;
 }
 
 .event-create-row-wrapper {
-    gap: 50px;
+  gap: 50px;
 }
 .event-create-wrapper {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 .event-radio-group {
-    position: relative;
-    display: flex;
-    top: 10%;
-    gap: 20px;
-    left: 20%;
+  position: relative;
+  display: flex;
+  top: 10%;
+  gap: 20px;
+  left: 20%;
 }
 
 .event-input-wrapper-large {
-    height: 120px !important
+  height: 120px !important;
 }
 .event-description-large {
-    height: 80px !important;
+  height: 80px !important;
 }
 .create-event-submit-wrapper {
-    position: relative;
-    top: 20px;
-    left: 37%;
+  position: relative;
+  top: 20px;
+  left: 37%;
 }
 
 /** END OF Create event styling**/
 
 /** Common event cards styling **/
+
+/** Grå boks som kan bruker til å dele mellom events
+    Blir brukt i home.html og myevents.html
+**/
 .section-divider {
-    min-width: max-content;
-    max-height: 40px;
-    justify-content: center;
-    padding: 10px;
+  min-width: max-content;
+  max-height: 40px;
+  justify-content: center;
+  padding: 10px;
 }
+/** Tekst i section divider **/
 .section-divider h4 {
-    color: var(--seak-main-color);
+  color: var(--seak-main-color);
 }
 
 .event-section {
-    min-height:87vh;
+  min-height: 87vh;
 }
+/** Selve boksen som resten av eventdetaljene ligger i **/
 .event-card {
-    gap: 20px;
-    height: 100px;
-    width: 99%;
-    background-color: white;
-    border: 1px solid grey;
+  gap: 20px;
+  height: 100px;
+  width: 99%;
+  background-color: white;
+  border: 1px solid grey;
 }
 .event-card img {
-    position: relative;
-    width: 90px;
-    height: 70px;
-    top: 10px;
-    left: 10px;
+  position: relative;
+  width: 90px;
+  height: 70px;
+  top: 10px;
+  left: 10px;
 }
 .event-text {
-    gap: 40px;
-    width: 200px;
-    overflow-wrap: break-word;
+  gap: 10px;
+  width: 200px;
+  overflow-wrap: break-word;
+}
+/** Tittel til event **/
+.event-text h4 {
+  position: relative;
+  top: 10px;
 }
 
-.event-text h4 {
-    position: relative;
-    top: 10px;
+/** Datotekst**/
+.event-text #date {
+  font-size: smaller;
+  position: relative;
+
+  width: 100px;
+  height: 15px;
 }
 .event-icons {
-    position: relative;
-    top: 10%;
-    left: 0%;
+  position: relative;
+  top: 10%;
+  left: 0%;
 }
